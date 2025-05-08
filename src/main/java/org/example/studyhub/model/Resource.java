@@ -42,7 +42,7 @@ public class Resource {
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updatetAt")
+    @Column(name = "updatedAt")
     private LocalDateTime updatetAt;
 
     //Lage en tom konstruktør
@@ -67,8 +67,8 @@ public class Resource {
     public long getResourceId() {
         return resourceId;
     }
-    public void setResource_Id(long resource_Id) {
-        this.resourceId = resource_Id;
+    public void setResource_Id(long resourceId) {
+        this.resourceId = resourceId;
     }
     public String getTitle() {
         return title;

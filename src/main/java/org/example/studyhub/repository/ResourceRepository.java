@@ -11,4 +11,5 @@ import java.util.List;
 public interface ResourceRepository extends JpaRepository<Resource, Long> {
     List<Resource> findByType(ResourceType type);
     List<Resource> findByCourseModule(CourseModule courseModule);
+
 }
