@@ -2,10 +2,12 @@ package org.example.studyhub.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
+import org.jspecify.annotations.NonNull;
 
 import java.time.LocalDateTime;
 
@@ -24,9 +26,11 @@ public class Resource {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long resourceId;
 
+    @NotBlank
     @Column(name = "title")
     private String title;
 
+    @NonNull
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private ResourceType type;
@@ -67,9 +71,7 @@ public class Resource {
     public long getResourceId() {
         return resourceId;
     }
-    public void setResource_Id(long resourceId) {
-        this.resourceId = resourceId;
-    }
+
     public String getTitle() {
         return title;
     }
@@ -98,14 +100,9 @@ public class Resource {
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+
     public LocalDateTime getUpdatetAt() {
         return updatetAt;
-    }
-    public void setUpdatet_At(LocalDateTime updatetAt) {
-        this.updatetAt = updatetAt;
     }
 
 }
